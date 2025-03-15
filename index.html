@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Repositorio de Contenidos</title>
+  <style>
+    /* Estilos base para un look moderno y responsivo */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+    /* Buscador */
+    #search {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 20px auto;
+      display: block;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    /* Navegación */
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #005999;
+    }
+    /* Secciones */
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #007acc;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    section ul {
+      list-style: none;
+    }
+    section ul li {
+      margin: 10px 0;
+    }
+    section ul li a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+    section ul li a:hover {
+      color: #007acc;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    /* Responsividad */
+    @media (min-width: 768px) {
+      main {
+        flex-direction: row;
+        gap: 20px;
+      }
+      section {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenido a Mi Espacio Digital</h1>
+    <p>¡Descubre, explora y sumérgete en mis videos y documentos!</p>
+    <input type="text" id="search" placeholder="¿Qué buscas hoy?">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#videos">Mis Videos</a></li>
+      <li><a href="#documentos">Mis Documentos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Sección para Videos -->
+    <section id="videos">
+      <h2>Mis Videos</h2>
+      <ul>
+        <li><a href="https://www.ejemplo.com/video1" target="_blank">Video 1</a></li>
+        <li><a href="https://www.ejemplo.com/video2" target="_blank">Video 2</a></li>
+        <!-- Agrega más enlaces de videos según necesites -->
+      </ul>
+    </section>
+
+    <!-- Sección para Documentos -->
+    <section id="documentos">
+      <h2>Mis Documentos</h2>
+      <ul>
+        <li><a href="https://www.ejemplo.com/documento1" target="_blank">Documento 1</a></li>
+        <li><a href="https://www.ejemplo.com/documento2" target="_blank">Documento 2</a></li>
+        <!-- Agrega más enlaces de documentos según necesites -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Mi Espacio Digital. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Función de búsqueda sencilla que filtra elementos de ambas secciones
+    const searchInput = document.getElementById("search");
+
+    searchInput.addEventListener("keyup", () => {
+      const filter = searchInput.value.toLowerCase();
+      // Seleccionamos todos los elementos de lista en ambas secciones
+      const items = document.querySelectorAll("main section ul li");
+
+      items.forEach(item => {
+        // Comprobamos si el texto del enlace coincide con el filtro
+        const text = item.textContent.toLowerCase();
+        if(text.includes(filter)){
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
